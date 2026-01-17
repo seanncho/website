@@ -436,6 +436,12 @@ footer {
   margin-right: 42px;
 }
 
+.end-quote {
+  text-align: center;
+  font-size: 1em;
+  margin: 10vh 5vh;
+}
+
 /* SCROLL FADE ANIMATIONS */
 
 @keyframes fadeInUp {
