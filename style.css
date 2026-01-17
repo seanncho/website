@@ -442,6 +442,12 @@ footer {
   margin: 10vh 5vh;
 }
 
+.end-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* SCROLL FADE ANIMATIONS */
 
 @keyframes fadeInUp {
