@@ -431,9 +431,9 @@ footer {
   font-size: 1em;
 }
 
-.tag.quote {
-  margin-left: 22px;
-  margin-right: 22px;
+.quote {
+  margin-left: 42px;
+  margin-right: 42px;
 }
 
 /* SCROLL FADE ANIMATIONS */
