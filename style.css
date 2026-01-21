@@ -184,7 +184,6 @@ section {
   scroll-margin-top: 22vh;
   height: fit-content;
   box-sizing: border-box;
-  padding: 6rem 1.5rem;
 }
 
 /* PROFILE SECTION */
@@ -195,7 +194,6 @@ section {
   gap: 5em;
   height: 60vh;
   margin: 10vh auto 0;
-  padding: 5vh 0;
 }
 
 .profile-pic {

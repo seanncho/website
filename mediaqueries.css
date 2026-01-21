@@ -132,54 +132,60 @@
 /* PORTRAIT ORIENTATION */
 
 @media screen and (max-width: 600px) and (orientation: landscape) {
-  #profile {
-    min-height: 80vh;
-    height: auto;
-  }
-  #about {
-    margin-top: 30vh !important;
-  }
-  nav {
-    padding-top: 5vh !important;
-    padding-bottom: 5vh !important;
-  }
-  #books {
-    margin-top: 15vh !important;
-    padding-top: 15vh !important;
-  }
-  footer {
-    margin-bottom: 5vh !important;
+  @-moz-document url-prefix() {
+    #profile {
+      min-height: 80vh;
+      height: auto;
+    }
+    #about {
+      margin-top: 30vh !important;
+    }
+    nav {
+      padding-top: 5vh !important;
+      padding-bottom: 5vh !important;
+    }
+    #books {
+      margin-top: 15vh !important;
+      padding-top: 15vh !important;
+    }
+    footer {
+      margin-bottom: 5vh !important;
+    }
   }
 }
 
 @media screen and (max-width: 1200px) and (orientation: landscape) {
-  #profile {
-    min-height: 20vh;
-    height: auto;
-  }
-  #about {
-    margin-top: 60vh !important;
-  }
-  nav {
-    padding-top: 5vh !important;
-    padding-bottom: 5vh !important;
-  }
-  #books {
-    margin-top: 15vh !important;
-    padding-top: 15vh !important;
-  }
-  footer {
-    margin-bottom: 5vh !important;
+  @-moz-document url-prefix() {
+    #profile {
+      min-height: 20vh;
+      height: auto;
+    }
+    #about {
+      margin-top: 60vh !important;
+    }
+    nav {
+      padding-top: 5vh !important;
+      padding-bottom: 5vh !important;
+    }
+    #books {
+      margin-top: 15vh !important;
+      padding-top: 15vh !important;
+    }
+    footer {
+      margin-bottom: 5vh !important;
+    }
   }
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
-  #profile {
-    min-height: 80vh;
-    height: auto;
-  }
-  #about {
-    margin-top: 10vh !important;
+  @-moz-document url-prefix() {
+    #profile {
+      min-height: 80vh;
+      height: auto;
+    }
+    #about {
+      margin-top: 10vh !important;
+    }
   }
 }
 
