@@ -270,7 +270,7 @@ section {
   text-align: center;
   font-size: 1em;
   padding: 1em;
-  width: 8em;
+  width: fit-content;
   border-radius: 1em;
   margin: 0.25em;
 }
@@ -319,7 +319,7 @@ section {
 }
 
 .book-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin-bottom: 10vh;
 }
 
