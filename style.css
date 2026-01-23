@@ -48,7 +48,8 @@ h4 {
 
 a,
 img,
-.btn {
+.btn,
+.btn2 {
   transition: all 300ms ease-in-out;
 }
 
@@ -265,8 +266,7 @@ section {
   gap: 1em;
 }
 
-.btn,
-.btn2 {
+.btn {
   text-align: center;
   font-size: 1em;
   padding: 1em;
@@ -275,7 +275,7 @@ section {
   margin: 0.25em;
 }
 
-.btn1 {
+.btn2 {
   text-align: center;
   font-size: 1em;
   padding: 1em;
