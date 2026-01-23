@@ -219,7 +219,7 @@ section {
 .section_text_p2 {
   font-size: 1.75em;
   margin-bottom: 1em;
-  width: 15em;
+  width: 14em;
 }
 
 .title {
@@ -271,6 +271,15 @@ section {
   font-size: 1em;
   padding: 1em;
   width: fit-content;
+  border-radius: 1em;
+  margin: 0.25em;
+}
+
+.btn1 {
+  text-align: center;
+  font-size: 1em;
+  padding: 1em;
+  width: 10em;
   border-radius: 1em;
   margin: 0.25em;
 }
