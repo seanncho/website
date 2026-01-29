@@ -3,8 +3,10 @@
 @media screen and (max-width: 1200px) {
   #profile {
     display: block;
-    height: 20vh;
+    min-height: 20vh;
+    height: auto;
     margin: 5vh auto 0;
+    padding-bottom: 5vh;
   }
   .profile-pic {
     margin: 0 auto;
@@ -53,7 +55,9 @@
 
 @media screen and (max-width: 600px) {
   #profile {
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
+    padding-bottom: 5vh;
   }
   footer nav {
     height: fit-content;
