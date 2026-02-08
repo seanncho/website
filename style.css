@@ -230,6 +230,12 @@ section {
   text-align: center;
 }
 
+.cert_title {
+  padding-top: 10vh;
+  font-size: 3em;
+  text-align: center;
+}
+
 #socials-container {
   display: flex;
   justify-content: center;
@@ -370,7 +376,7 @@ section {
 }
 
 .bio {
-  font-size: 2vw;
+  font-size: 1.4vw;
 }
 
 /* SKILLS SECTION */
