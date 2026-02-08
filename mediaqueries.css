@@ -85,6 +85,10 @@
   .title {
     font-size: 2em;
   }
+  .cert_title {
+    padding-top: 5vh;
+    font-size: 2em;
+  }
   .cert-grid,
   .skill-grid,
   .project-grid,
