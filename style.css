@@ -376,7 +376,6 @@ section {
 }
 
 .cert-grid-container {
-  margin: 0.5em;
   align-items: center;
 }
 
@@ -402,7 +401,6 @@ section {
 }
 
 .skill-grid-container {
-  margin: 0.5em;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -422,7 +420,6 @@ section {
 
 .project-grid-container {
   padding-top: 2em;
-  margin: 1em;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -454,7 +451,6 @@ section {
 }
 
 .contact-grid-container {
-  margin: 0.5em;
   align-items: center;
 }
 
@@ -472,7 +468,6 @@ section {
 
 .book-grid-container {
   padding: 1em 1.5em;
-  margin: 0.5em;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
