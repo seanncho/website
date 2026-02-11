@@ -36,6 +36,12 @@ p {
   font-size: 1rem;
 }
 
+h1 {
+  margin: auto 1em;
+  padding: 1em;
+  font-size: 2.5em;
+}
+
 h3 {
   margin: auto 1em;
   padding: 1em;
@@ -304,6 +310,9 @@ section {
    =========================== */
 
 .btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1em;
 }
 
@@ -341,6 +350,7 @@ section {
 .contact-grid-container,
 .book-grid-container {
   display: flex;
+  width: 100%;
   padding: 1.5em;
   border-radius: 1.25em;
   box-shadow: var(--card-shadow);
@@ -366,6 +376,7 @@ section {
 
 .cert-grid-container {
   margin: 0.5em;
+  align-items: center;
 }
 
 .cert-grid {
@@ -414,7 +425,6 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
 }
 
 .project-grid {
@@ -444,6 +454,7 @@ section {
 
 .contact-grid-container {
   margin: 0.5em;
+  align-items: center;
 }
 
 .contact-grid {
@@ -505,12 +516,12 @@ footer {
   padding: 0 1.5rem;
 }
 
-footer nav {
+.nav-links-container {
   display: flex;
   justify-content: center;
 }
 
-footer .nav-links {
+.nav-links-container .nav-links {
   justify-content: center;
   flex-wrap: wrap;
 }

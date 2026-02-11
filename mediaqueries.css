@@ -17,6 +17,9 @@
   #hamburger-nav {
     display: flex;
   }
+  #about {
+    margin-top: 4vh;
+  }
   #skills {
     margin-top: 2em;
   }
@@ -92,7 +95,8 @@
   .cert-grid,
   .skill-grid,
   .project-grid,
-  .contact-grid {
+  .contact-grid,
+  .book-grid {
     margin: 0 auto;
   }
   .cert-grid {
@@ -169,7 +173,7 @@
       height: auto;
     }
     #about {
-      margin-top: 60vh !important;
+      margin-top: 30vh !important;
     }
     #hamburger-nav {
       padding-top: 5vh !important;
