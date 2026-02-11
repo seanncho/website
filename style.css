@@ -354,6 +354,7 @@ section {
   padding: 1.5em;
   border-radius: 1.25em;
   box-shadow: var(--card-shadow);
+  justify-self: center;
 }
 
 .cert-grid,
