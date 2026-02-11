@@ -1,8 +1,7 @@
-/* ===========================
-   GENERAL
-   =========================== */
+/* GENERAL */
 
 * {
+  /* Courier is my favorite font. I also like Comic Sans (please don't judge me) */
   font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
@@ -15,31 +14,22 @@ html {
 
 :root {
   --accent-color: #5BC2E7; /* Zima Blue */
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --text-secondary: #a0a0a0;
-  --card-shadow: inset 0 0 12px rgba(135, 135, 135, 0.08),
-    0 0 16px 2px rgba(0, 0, 0, 0.25);
-  --transition: 300ms ease-in-out;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color var(--transition), color var(--transition);
+  background-color: #121212;
+  color: #e0e0e0;
+  transition: background-color 300ms, color 300ms;
 }
 
 p {
-  color: var(--text-secondary);
+  color: #a0a0a0;
   margin: auto;
-  font-size: 1rem;
+  font-size: 2vw;
 }
 
 h1 {
-  margin: auto 1em;
-  padding: 1em;
-  font-size: 2.5em;
-  text-align: center;
+  margin-top: 10vh;
 }
 
 h3 {
@@ -54,46 +44,41 @@ h4 {
   font-size: 0.9em;
 }
 
-/* ===========================
-   TRANSITIONS
-   =========================== */
+/* TRANSITION */
 
 a,
 img,
-.btn {
-  transition: all var(--transition);
+.btn,
+.btn2 {
+  transition: all 300ms ease-in-out;
 }
 
-/* ===========================
-   DESKTOP NAV
-   =========================== */
+/* DESKTOP NAV */
 
-#desktop-nav,
-#hamburger-nav,
+nav,
 .nav-links {
   display: flex;
 }
 
-#desktop-nav,
-#hamburger-nav {
+nav {
   justify-content: space-around;
   align-items: center;
-  height: 6rem;
+  height: 15vh;
   position: sticky;
   top: 0;
-  background-color: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(12px);
+  background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
 .nav-links {
   gap: 2em;
   list-style: none;
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 
 a {
-  color: var(--text-color);
+  color: #e0e0e0;
   text-decoration: none;
   text-decoration-color: transparent;
 }
@@ -106,10 +91,9 @@ a:hover {
 }
 
 .logo {
-  font-size: 2em;
-  font-weight: bold;
-  color: var(--text-color);
-  transition: all var(--transition);
+  font-size: 3em;
+  color: #e0e0e0;
+  transition: all 300ms ease-in-out;
 }
 
 .logo:hover {
@@ -117,9 +101,7 @@ a:hover {
   cursor: default;
 }
 
-/* ===========================
-   HAMBURGER MENU
-   =========================== */
+/* HAMBURGER MENU */
 
 #hamburger-nav {
   display: none;
@@ -143,31 +125,31 @@ a:hover {
   width: 100%;
   height: 2px;
   background-color: white;
-  transition: all var(--transition);
+  transition: all 300ms ease-in-out;
 }
 
 .menu-links {
-  margin-top: 2em;
+  margin-top: 4em;
   border-radius: 1em;
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: rgba(18, 18, 18, 0.9);
-  backdrop-filter: blur(12px);
+  background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition);
+  transition: max-height 300ms ease-in-out;
 }
 
 .menu-links a {
   display: block;
-  padding: 10px 20px;
+  padding: 10px;
   text-align: center;
-  font-size: 1.25em;
-  color: var(--text-secondary);
+  font-size: 1.5em;
+  color: #a0a0a0;
   text-decoration: none;
-  transition: all var(--transition);
+  transition: all 300ms ease-in-out;
 }
 
 .menu-links a:hover {
@@ -182,7 +164,7 @@ a:hover {
 }
 
 .menu-links.open {
-  max-height: 400px;
+  max-height: 300px;
 }
 
 .hamburger-icon.open span:first-child {
@@ -197,23 +179,15 @@ a:hover {
   transform: rotate(-45deg) translate(10px, -5px);
 }
 
-/* ===========================
-   SECTIONS
-   =========================== */
+/* SECTIONS */
 
 section {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 22vh;
   height: fit-content;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1.5rem;
   box-sizing: border-box;
 }
 
-/* ===========================
-   PROFILE SECTION
-   =========================== */
+/* PROFILE SECTION */
 
 #profile {
   display: flex;
@@ -221,8 +195,8 @@ section {
   gap: 5em;
   min-height: 60vh;
   height: auto;
-  margin: 6vh auto 0;
-  padding-bottom: 6vh;
+  margin: 10vh auto 0;
+  padding-bottom: 10vh;
 }
 
 .profile-pic {
@@ -246,19 +220,18 @@ section {
 }
 
 .section_text_p2 {
-  font-size: 1.5rem;
+  font-size: 1.75em;
   margin-bottom: 1em;
-  max-width: 20em;
+  width: 14em;
 }
 
 .title {
   font-size: 3em;
   text-align: center;
-  margin-bottom: 0.25em;
 }
 
 .cert_title {
-  padding-top: 6vh;
+  padding-top: 10vh;
   font-size: 3em;
   text-align: center;
   margin: auto;
@@ -271,17 +244,7 @@ section {
   gap: 1em;
 }
 
-#socials-container a {
-  display: flex;
-}
-
-#socials-container a:hover {
-  text-decoration: none;
-}
-
-/* ===========================
-   ICONS
-   =========================== */
+/* ICONS */
 
 .top-icon {
   border-radius: 1em;
@@ -306,44 +269,41 @@ section {
   transform: scale(1.1) rotate(3deg);
 }
 
-/* ===========================
-   BUTTONS
-   =========================== */
+/* BUTTONS */
 
 .btn-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 1em;
 }
 
 .btn {
-  display: inline-block;
   text-align: center;
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.75em 1.5em;
-  border-radius: 0.5em;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: transparent;
-  color: var(--text-color);
+  font-size: 1em;
+  padding: 1em;
+  width: fit-content;
+  border-radius: 1em;
+  margin: 0.25em;
+}
+
+.btn2 {
+  text-align: center;
+  font-size: 1em;
+  padding: 1em;
+  width: 10em;
+  border-radius: 1em;
+  margin: 0.25em;
+}
+
+.btn-color-1 {
+  border: rgb(53, 53, 53) 0.1em solid;
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+  color: white;
   cursor: pointer;
-  transition: all var(--transition);
 }
 
-.btn:hover {
-  background: var(--accent-color);
-  color: var(--bg-color);
-  border-color: var(--accent-color);
-}
-
-.btn-wide {
-  min-width: 10em;
-}
-
-/* ===========================
-   GRID CONTAINERS
-   =========================== */
+/* GRID CONTAINERS */
 
 .cert-grid-container,
 .skill-grid-container,
@@ -352,8 +312,8 @@ section {
 .book-grid-container {
   display: flex;
   padding: 1.5em;
-  border-radius: 1.25em;
-  box-shadow: var(--card-shadow);
+  border-radius: 2em;
+  box-shadow: inset 0 0 15px rgba(135, 135, 135, .1), 0 0 18px 3px rgba(0, 0, 0, .3);
 }
 
 .cert-grid,
@@ -366,16 +326,46 @@ section {
   padding: 2em;
 }
 
-/* ===========================
-   ABOUT SECTION
-   =========================== */
+.book-grid-container {
+  padding-top: 2em;
+  margin: 1em;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 10vh;
+}
+
+#books {
+  margin: 30vh auto 0;
+}
+
+.book-img {
+  display: flex;
+  margin: 0 auto;
+  border-radius: 8px;
+  object-fit: cover;
+  width: 50%;
+  height: auto;
+}
+
+.book-img:hover {
+  transform: scale(1.025);
+}
+
+/* ABOUT SECTION */
 
 #about {
-  margin-top: 15vh;
+  margin: 25vh auto 0;
 }
 
 .cert-grid-container {
-  align-items: center;
+  margin: 0.5em;
 }
 
 .cert-grid {
@@ -383,23 +373,21 @@ section {
 }
 
 .text-container {
-  margin: 2em 1em;
+  margin: 3em;
 }
 
 .bio {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1.4vw;
 }
 
-/* ===========================
-   SKILLS SECTION
-   =========================== */
+/* SKILLS SECTION */
 
 #skills {
-  margin-top: 12vh;
+  margin: 20vh auto 0;
 }
 
 .skill-grid-container {
+  margin: 0.5em;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -409,19 +397,20 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* ===========================
-   PROJECTS SECTION
-   =========================== */
+/* PROJECTS SECTION */
 
 #projects {
-  margin-top: 12vh;
+  margin: 20vh auto 0;
 }
 
 .project-grid-container {
   padding-top: 2em;
+  margin: 1em;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100%;
 }
 
 .project-grid {
@@ -431,7 +420,7 @@ section {
 .project-img {
   display: flex;
   margin: 0 auto;
-  border-radius: 1.25em;
+  border-radius: 2em;
   object-fit: cover;
   width: 50%;
   height: auto;
@@ -441,109 +430,53 @@ section {
   transform: scale(1.025);
 }
 
-/* ===========================
-   CONTACT SECTION
-   =========================== */
+/* CONTACT */
 
 #contact {
-  margin-top: 12vh;
+  margin: 20vh auto 0;
 }
 
 .contact-grid-container {
-  align-items: center;
+  margin: 0.5em;
 }
 
 .contact-grid {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* ===========================
-   BOOKS SECTION
-   =========================== */
-
-#books {
-  margin-top: 12vh;
-}
-
-.book-grid-container {
-  padding: 1em 1.5em;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  height: 20em;
-}
-
-.book-grid-container h4 {
-  padding: 0.5em 0.5em 0;
-  margin: 2em 0 0.5em;
-  font-size: 0.85em;
-}
-
-.book-grid-container .btn-container {
-  margin-top: auto;
-}
-
-.book-grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-bottom: 4vh;
-}
-
-.book-img {
-  display: flex;
-  margin: 0 auto;
-  border-radius: 8px;
-  object-fit: contain;
-  max-width: 50%;
-  max-height: 11em;
-}
-
-.book-img:hover {
-  transform: scale(1.025);
-}
-
-/* ===========================
-   FOOTER
-   =========================== */
+/* FOOTER SECTION */
 
 footer {
-  max-width: 1200px;
-  margin: 6vh auto 4vh;
-  padding: 0 1.5rem;
-}
-
-.nav-links-container {
-  display: flex;
-  justify-content: center;
-}
-
-.nav-links-container .nav-links {
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 10vh 5vh;
 }
 
 .footer-text {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1em;
 }
 
 .tag.quote {
-  margin: 1rem auto;
+  margin-left: 22px;
+  margin-right: 22px;
 }
 
 .end-quote {
   text-align: center;
-  font-size: 0.9rem;
-  margin-top: 1.5rem;
-  color: var(--text-secondary);
+  font-size: 1em;
+  margin: 5vh 5vh;
 }
 
-/* ===========================
-   SCROLL FADE ANIMATIONS
-   =========================== */
+.end-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SCROLL FADE ANIMATIONS */
 
 @keyframes fadeInUp {
   from {
-    transform: translateY(30px);
+    transform: translateY(50px);
     opacity: 0;
   }
   to {
@@ -558,7 +491,7 @@ footer {
     opacity: 1;
   }
   to {
-    transform: translateY(30px);
+    transform: translateY(50px);
     opacity: 0;
   }
 }
@@ -569,10 +502,10 @@ footer {
 }
 
 .fade-in-up {
-  animation: fadeInUp 0.8s both;
+  animation: fadeInUp 1s both;
   opacity: 1;
 }
 
 .fade-out {
-  animation: fadeOut 0.8s both;
+  animation: fadeOut 1s both;
 }
