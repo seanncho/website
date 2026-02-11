@@ -1,4 +1,4 @@
-/* MEDIA QUERIES YIPPEE */
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 1200px) {
   #profile {
@@ -148,7 +148,7 @@
     #about {
       margin-top: 30vh !important;
     }
-    nav {
+    #hamburger-nav {
       padding-top: 5vh !important;
       padding-bottom: 5vh !important;
     }
@@ -171,7 +171,7 @@
     #about {
       margin-top: 60vh !important;
     }
-    nav {
+    #hamburger-nav {
       padding-top: 5vh !important;
       padding-bottom: 5vh !important;
     }
@@ -268,7 +268,7 @@
   #projects {
     margin-top: 10vh;
   }
-  nav {
+  #hamburger-nav {
     position: sticky !important;
     top: 0 !important;
     padding-top: 5vh !important;
