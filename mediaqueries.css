@@ -98,6 +98,15 @@
   .contact-grid,
   .book-grid {
     margin: 0 auto;
+    padding: 1em 0;
+  }
+  .cert-grid-container,
+  .skill-grid-container,
+  .project-grid-container,
+  .contact-grid-container,
+  .book-grid-container {
+    width: 100%;
+    max-width: 100%;
   }
   .cert-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
