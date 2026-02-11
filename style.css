@@ -327,7 +327,7 @@ section {
 }
 
 .book-grid-container {
-  padding: 1em 1.5em;
+  margin: 0.5em;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
@@ -336,12 +336,8 @@ section {
 
 .book-grid-container h4 {
   padding: 0.5em 0.5em 0;
-  margin: 2em 0 0.5em;
+  margin: 1em 0 1em;
   font-size: 0.85em;
-}
-
-.book-grid-container .btn-container {
-  margin-top: auto;
 }
 
 .book-grid {
