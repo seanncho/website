@@ -195,7 +195,7 @@ section {
   gap: 5em;
   min-height: 60vh;
   height: auto;
-  margin: 10vh auto 0;
+  margin: 5vh auto 0;
   padding-bottom: 10vh;
 }
 
@@ -228,6 +228,12 @@ section {
 .title {
   font-size: 3em;
   text-align: center;
+}
+
+.header_title {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 0;
 }
 
 .cert_title {
@@ -312,8 +318,9 @@ section {
 .book-grid-container {
   display: flex;
   padding: 1.5em;
-  border-radius: 2em;
-  box-shadow: inset 0 0 15px rgba(135, 135, 135, .1), 0 0 18px 3px rgba(0, 0, 0, .3);
+  border-radius: 1em;
+  box-shadow: inset 0 0 12px rgba(135, 135, 135, 0.08), 
+  0 0 16px 2px rgba(0, 0, 0, 0.25);
 }
 
 .cert-grid,
@@ -326,8 +333,12 @@ section {
   padding: 2em;
 }
 
+#books {
+  margin-top: 30vh;
+}
+
 .book-grid-container {
-  margin: 0.5em;
+  padding: 1em 1.5em;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
@@ -336,8 +347,12 @@ section {
 
 .book-grid-container h4 {
   padding: 0.5em 0.5em 0;
-  margin: 1em 0 1em;
+  margin: 2em 0 0.5em;
   font-size: 0.85em;
+}
+
+.book-grid-container .btn-container {
+  margin-top: auto;
 }
 
 .book-grid {
@@ -345,19 +360,15 @@ section {
   margin-bottom: 4vh;
 }
 
-#books {
-  margin: 30vh auto 0;
-}
-
 .book-img {
   display: flex;
   margin: 0 auto;
   border-radius: 8px;
   object-fit: cover;
-  min-width: 150px;
-  min-height: 150px;
-  max-width: 60%;
-  max-height: 60%;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 65%;
+  max-height: 11em;
 }
 
 .book-img:hover {
@@ -426,7 +437,7 @@ section {
 .project-img {
   display: flex;
   margin: 0 auto;
-  border-radius: 2em;
+  border-radius: 1em;
   object-fit: cover;
   width: 50%;
   height: auto;
