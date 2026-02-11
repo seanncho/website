@@ -327,18 +327,26 @@ section {
 }
 
 .book-grid-container {
-  padding-top: 2em;
-  margin: 1em;
-  box-sizing: border-box;
-  justify-content: center;
+  padding: 1em 1.5em;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  height: 20em;
+}
+
+.book-grid-container h4 {
+  padding: 0.5em 0.5em 0;
+  margin: 2em 0 0.5em;
+  font-size: 0.85em;
+}
+
+.book-grid-container .btn-container {
+  margin-top: auto;
 }
 
 .book-grid {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-bottom: 10vh;
+  margin-bottom: 4vh;
 }
 
 #books {
@@ -350,8 +358,10 @@ section {
   margin: 0 auto;
   border-radius: 8px;
   object-fit: cover;
-  width: 50%;
-  height: auto;
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 60%;
+  max-height: 60%;
 }
 
 .book-img:hover {
