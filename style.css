@@ -286,8 +286,10 @@ section {
   font-size: 1em;
   padding: 1em;
   width: fit-content;
-  border-radius: 1em;
+  border-radius: 0.6em;
   margin: 0.25em;
+  background: transparent;
+  letter-spacing: 0.03em;
 }
 
 .btn2 {
@@ -295,18 +297,29 @@ section {
   font-size: 1em;
   padding: 1em;
   width: 10em;
-  border-radius: 1em;
+  border-radius: 0.6em;
   margin: 0.25em;
+  background: transparent;
+  letter-spacing: 0.03em;
 }
 
 .btn-color-1 {
-  border: rgb(53, 53, 53) 0.1em solid;
+  border: 1px solid rgba(91, 194, 231, 0.3);
+  color: #e0e0e0;
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
-  color: white;
+  background: rgba(91, 194, 231, 0.1);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  box-shadow: 0 0 12px rgba(91, 194, 231, 0.15);
+  transform: translateY(-2px);
   cursor: pointer;
+}
+
+.btn-color-1:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* GRID CONTAINERS */
@@ -319,8 +332,20 @@ section {
   display: flex;
   padding: 1.5em;
   border-radius: 1em;
-  box-shadow: inset 0 0 12px rgba(135, 135, 135, 0.08), 
-  0 0 16px 2px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(91, 194, 231, 0.08);
+  box-shadow: inset 0 0 12px rgba(91, 194, 231, 0.03),
+    0 0 16px 2px rgba(0, 0, 0, 0.25);
+  transition: border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+
+.cert-grid-container:hover,
+.skill-grid-container:hover,
+.project-grid-container:hover,
+.contact-grid-container:hover,
+.book-grid-container:hover {
+  border-color: rgba(91, 194, 231, 0.15);
+  box-shadow: inset 0 0 16px rgba(91, 194, 231, 0.05),
+    0 0 16px 2px rgba(0, 0, 0, 0.25);
 }
 
 .cert-grid,
