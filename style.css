@@ -304,15 +304,15 @@ section {
 }
 
 .btn-color-1 {
-  border: 1px solid rgba(91, 194, 231, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #e0e0e0;
 }
 
 .btn-color-1:hover {
-  background: rgba(91, 194, 231, 0.1);
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-  box-shadow: 0 0 12px rgba(91, 194, 231, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
   cursor: pointer;
 }
@@ -332,8 +332,8 @@ section {
   display: flex;
   padding: 1.5em;
   border-radius: 1em;
-  border: 1px solid rgba(91, 194, 231, 0.08);
-  box-shadow: inset 0 0 12px rgba(91, 194, 231, 0.03),
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.02),
     0 0 16px 2px rgba(0, 0, 0, 0.25);
   transition: border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
 }
@@ -343,8 +343,8 @@ section {
 .project-grid-container:hover,
 .contact-grid-container:hover,
 .book-grid-container:hover {
-  border-color: rgba(91, 194, 231, 0.15);
-  box-shadow: inset 0 0 16px rgba(91, 194, 231, 0.05),
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.03),
     0 0 16px 2px rgba(0, 0, 0, 0.25);
 }
 
@@ -395,10 +395,6 @@ section {
   min-height: 100px;
   max-width: 65%;
   max-height: 11em;
-}
-
-.book-img:hover {
-  transform: scale(1.025);
 }
 
 /* ABOUT SECTION */
@@ -467,10 +463,6 @@ section {
   object-fit: cover;
   width: 50%;
   height: auto;
-}
-
-.project-img:hover {
-  transform: scale(1.025);
 }
 
 /* CONTACT */
