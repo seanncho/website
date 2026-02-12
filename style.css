@@ -339,6 +339,7 @@ section {
 
 .book-grid-container {
   padding: 1em 1.5em;
+  margin: 0.5em;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
