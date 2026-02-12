@@ -388,7 +388,7 @@ section {
 
 .book-img {
   display: flex;
-  margin: 0 auto;
+  margin: 1em auto 0;
   border-radius: 8px;
   object-fit: cover;
   min-width: 100px;
