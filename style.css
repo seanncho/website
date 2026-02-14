@@ -389,7 +389,7 @@ section {
 .contact-grid-container:hover,
 .book-grid-container:hover {
   border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.03),
+  box-shadow: inset 0 0 16px rgba(91, 194, 231, 0.05),
     0 0 16px 2px rgba(0, 0, 0, 0.25);
 }
 
