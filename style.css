@@ -81,13 +81,31 @@ a {
   color: #e0e0e0;
   text-decoration: none;
   text-decoration-color: transparent;
+  position: relative;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+a:hover::before {
+  color: var(--accent-color);
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 a:hover {
   color: var(--accent-color);
-  text-decoration: underline;
-  text-underline-offset: 0.5em;
-  text-decoration-color: var(--accent-color);
 }
 
 .logo {
@@ -154,9 +172,6 @@ a:hover {
 
 .menu-links a:hover {
   color: var(--accent-color);
-  text-decoration: underline;
-  text-underline-offset: 0.3em;
-  text-decoration-color: var(--accent-color);
 }
 
 .menu-links li {
