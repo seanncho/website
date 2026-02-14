@@ -355,8 +355,8 @@ section {
 
 .btn-color-1:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #ffffff;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
   cursor: pointer;
