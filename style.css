@@ -272,7 +272,7 @@ section {
 .cert-icon:hover,
 .icon:hover,
 .bottom-icon:hover {
-  transform: scale(1.1) rotate(3deg);
+  transform: scale(1.1) translateY(-4px);
 }
 
 /* BUTTONS */
