@@ -302,6 +302,7 @@ section {
 }
 
 .cert-icon {
+  opacity: 0.8;
   cursor: pointer;
   height: 10em;
 }
@@ -309,6 +310,7 @@ section {
 .icon,
 .top-icon,
 .bottom-icon {
+  opacity: 0.8;
   cursor: pointer;
   height: 5em;
 }
@@ -317,7 +319,8 @@ section {
 .cert-icon:hover,
 .icon:hover,
 .bottom-icon:hover {
-  transform: scale(1.1) translateY(-4px);
+  transform: scale(1.05) translateY(-4px);
+  opacity: 1.0;
 }
 
 /* BUTTONS */
