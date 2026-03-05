@@ -1,7 +1,6 @@
 /* GENERAL */
 
 * {
-  /* Courier is my favorite font. I also like Comic Sans. */
   font-family: "Courier New", Courier, monospace;
   margin: 0;
   padding: 0;
@@ -406,45 +405,6 @@ section {
   padding: 2em;
 }
 
-#books {
-  margin-top: 30vh;
-}
-
-.book-grid-container {
-  padding: 1em 1.5em;
-  margin: 0.5em;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  height: 20em;
-}
-
-.book-grid-container h4 {
-  padding: 0.5em 0.5em 0;
-  margin: 2em 0 0.5em;
-  font-size: 0.85em;
-}
-
-.book-grid-container .btn-container {
-  margin-top: auto;
-}
-
-.book-grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  margin-bottom: 4vh;
-}
-
-.book-img {
-  display: flex;
-  margin: 1em auto 0;
-  border-radius: 8px;
-  object-fit: cover;
-  min-width: 100px;
-  min-height: 100px;
-  max-width: 65%;
-  max-height: 11em;
-}
-
 /* ABOUT SECTION */
 
 #about {
@@ -553,6 +513,47 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* BOOKS SECTION */
+
+#books {
+  margin-top: 30vh;
+}
+
+.book-grid-container {
+  padding: 1em 1.5em;
+  margin: 0.5em;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 20em;
+}
+
+.book-grid-container h4 {
+  padding: 0.5em 0.5em 0;
+  margin: 2em 0 0.5em;
+  font-size: 0.85em;
+}
+
+.book-grid-container .btn-container {
+  margin-top: auto;
+}
+
+.book-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 4vh;
+}
+
+.book-img {
+  display: flex;
+  margin: 1em auto 0;
+  border-radius: 8px;
+  object-fit: cover;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 65%;
+  max-height: 11em;
 }
 
 /* SCROLL FADE ANIMATIONS */
