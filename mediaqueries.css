@@ -117,11 +117,17 @@
   .book-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+  h1 {
+    font-size: 2em;
+  }
   h3 {
     font-size: 0.8em;
   }
   h4 {
     font-size: 0.8em;
+  }
+  .header_title {
+    font-size: 2em;
   }
   .cert-icon {
     height: 5em;
