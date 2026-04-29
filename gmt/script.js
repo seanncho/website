@@ -510,10 +510,14 @@ function displayData() {
     localStorage.setItem("formOutput", formOutput);
     
     const newTab = window.open();
-    newTab.document.write("<!DOCTYPE html><html><head><link rel='stylesheet' type='text/css' href='style.css'></head><body class='body2'>");
-    newTab.document.write(localStorage.getItem("formOutput"));
-    newTab.document.write("<button onclick='window.location.href=\"thankyou.html\"' class='button'>Submit</button>");
-    newTab.document.write("</body></html>");
+    if (!newTab) return; // blocked by popup blocker
+
+    newTab.document.head.innerHTML = `<link rel='stylesheet' type='text/css' href='style.css'>`;
+    newTab.document.body.className = "body2";
+    newTab.document.body.innerHTML = `
+        ${localStorage.getItem("formOutput")}
+        <button onclick='window.location.href="thankyou.html"' class='button'>Submit</button>
+    `;
 }
 
 // Initialize on page load
