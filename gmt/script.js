@@ -508,18 +508,18 @@ function displayData() {
 
     formOutput += "</table>";
     localStorage.setItem("formOutput", formOutput);
-    
-    const storedOutput = localStorage.getItem("formOutput");
-    const basePath = window.location.href.substring(0, window.location.href.lastIndexOf("/"));
+
+    const cssResponse = await fetch(`${window.location.origin}/gmt/style.css`);
+    const cssText = await cssResponse.text();
 
     const html = `
         <!DOCTYPE html>
         <html>
         <head>
-            <link rel='stylesheet' type='text/css' href='${basePath}/style.css'>
+            <style>${cssText}</style>
         </head>
         <body class='body2'>
-            ${storedOutput}
+            ${localStorage.getItem("formOutput")}
             <button onclick='window.location.href="thankyou.html"' class='button'>Submit</button>
         </body>
         </html>
@@ -528,7 +528,7 @@ function displayData() {
     const blob = new Blob([html], { type: "text/html" });
     const blobURL = URL.createObjectURL(blob);
     const newTab = window.open(blobURL);
-    if (!newTab) return; // blocked by popup blocker
+    if (!newTab) return;
 }
 
 // Initialize on page load
