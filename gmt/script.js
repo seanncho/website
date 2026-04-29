@@ -476,7 +476,7 @@ function initForm() {
 }
 
 // Display form data in new tab
-function displayData() {
+async function displayData() {
     const form = document.getElementById("signup");
     if (!form) return;
 
