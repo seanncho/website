@@ -509,16 +509,26 @@ function displayData() {
     formOutput += "</table>";
     localStorage.setItem("formOutput", formOutput);
     
-    const newTab = window.open();
-    if (!newTab) return; // blocked by popup blocker
-
+    const storedOutput = localStorage.getItem("formOutput");
     const basePath = window.location.href.substring(0, window.location.href.lastIndexOf("/"));
-    newTab.document.head.innerHTML = `<link rel='stylesheet' type='text/css' href='${basePath}/style.css'>`;
-    newTab.document.body.className = "body2";
-    newTab.document.body.innerHTML = `
-        ${localStorage.getItem("formOutput")}
-        <button onclick='window.location.href="thankyou.html"' class='button'>Submit</button>
+
+    const html = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <link rel='stylesheet' type='text/css' href='${basePath}/style.css'>
+        </head>
+        <body class='body2'>
+            ${storedOutput}
+            <button onclick='window.location.href="thankyou.html"' class='button'>Submit</button>
+        </body>
+        </html>
     `;
+
+    const blob = new Blob([html], { type: "text/html" });
+    const blobURL = URL.createObjectURL(blob);
+    const newTab = window.open(blobURL);
+    if (!newTab) return; // blocked by popup blocker
 }
 
 // Initialize on page load
