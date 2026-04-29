@@ -512,7 +512,8 @@ function displayData() {
     const newTab = window.open();
     if (!newTab) return; // blocked by popup blocker
 
-    newTab.document.head.innerHTML = `<link rel='stylesheet' type='text/css' href='style.css'>`;
+    const basePath = window.location.href.substring(0, window.location.href.lastIndexOf("/"));
+    newTab.document.head.innerHTML = `<link rel='stylesheet' type='text/css' href='${basePath}/style.css'>`;
     newTab.document.body.className = "body2";
     newTab.document.body.innerHTML = `
         ${localStorage.getItem("formOutput")}
