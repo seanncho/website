@@ -476,7 +476,7 @@ function initForm() {
 }
 
 // Display form data in new tab
-async function displayData() {
+function displayData() {
     const form = document.getElementById("signup");
     if (!form) return;
 
@@ -508,27 +508,12 @@ async function displayData() {
 
     formOutput += "</table>";
     localStorage.setItem("formOutput", formOutput);
-
-    const cssResponse = await fetch(`${window.location.origin}/gmt/style.css`);
-    const cssText = await cssResponse.text();
-
-    const html = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <style>${cssText}</style>
-        </head>
-        <body class='body2'>
-            ${localStorage.getItem("formOutput")}
-            <button onclick='window.location.href="thankyou.html"' class='button'>Submit</button>
-        </body>
-        </html>
-    `;
-
-    const blob = new Blob([html], { type: "text/html" });
-    const blobURL = URL.createObjectURL(blob);
-    const newTab = window.open(blobURL);
-    if (!newTab) return;
+    
+    const newTab = window.open();
+    newTab.document.write("<!DOCTYPE html><html><head><link rel='stylesheet' type='text/css' href='style.css'></head><body class='body2'>");
+    newTab.document.write(localStorage.getItem("formOutput"));
+    newTab.document.write("<button onclick='window.location.href=\"thankyou.html\"' class='button'>Submit</button>");
+    newTab.document.write("</body></html>");
 }
 
 // Initialize on page load
