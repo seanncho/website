@@ -142,8 +142,7 @@
   footer {
     margin: 2vh 0 5vh;
   }
-  .footer-text,
-  .end-quote {
+  .footer-text {
     font-size: 0.5em;
   }
 }

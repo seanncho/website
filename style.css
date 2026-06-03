@@ -503,18 +503,6 @@ footer {
   margin-right: 22px;
 }
 
-.end-quote {
-  text-align: center;
-  font-size: 1em;
-  margin: 5vh 5vh;
-}
-
-.end-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* BOOKS SECTION */
 
 #books {
