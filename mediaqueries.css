@@ -142,7 +142,8 @@
   footer {
     margin: 2vh 0 5vh;
   }
-  .footer-text {
+  .footer-text,
+  .verse {
     font-size: 0.5em;
   }
 }
