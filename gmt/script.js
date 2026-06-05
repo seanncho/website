@@ -469,18 +469,6 @@ function dateOfBirthValidation() {
     checkFlags();
 }
 
-// Sticky header
-window.onscroll = function() {myFunction()};
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-function myFunction() {
-  if (window.scrollY > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-
 // Cookie functions
 function setCookie(name, cvalue, expiryDays) {
     var day = new Date();
