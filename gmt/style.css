@@ -1,399 +1,351 @@
-/* CSS Reset & Base Styles */
-* {
-    box-sizing: border-box;
-}
+/*CSS*/
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
+    min-width: 600px;
     margin: 0;
     background-color: azure;
-    font-family: "Courier New", monospace;
     font-size: 16px;
-    min-width: 320px;
 }
 
-.content {
-    margin-top: 150px;
-    padding: 20px;
-}
-
-/* Header */
-.header {
-    margin: 0;
-    padding: 32px 20px;
-    background: #555;
-    color: #f1f1f1;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    opacity: 0.9;
-    width: 100%;
-    position: fixed;
-    top: 0;
-}
-
-.headerClass1 {
-    display: inline;
-    font-size: xx-large;
-    font-weight: bold;
-    color: white;
-    opacity: 1;
-    margin: 0;
-}
-
-.coolinks {
-    font-size: 16px;
-    color: aliceblue;
-    text-align: center;
-    opacity: 1;
-    margin-top: 10px;
-}
-
-.coolinks a {
-    margin: 0 10px;
-}
-
-/* Top Section */
-.topPart {
-    text-align: center;
-    margin: 0 auto 30px;
-}
-
-.topPart h3,
-.topPart p {
-    margin: 10px 0;
-}
-
-#logo {
-    display: block;
-    margin: 20px auto;
-    width: 256px;
-    max-width: 100%;
-    transition: transform 0.5s;
-}
-
-#logo:hover {
-    transform: rotate(360deg);
-}
-
-/* Form Container */
-.form-container {
-    max-width: 800px;
+table {
+    width: fit-content;
     margin: 40px auto;
+    font-family: "Courier New", monospace;
     background-color: #89cff0;
     border-radius: 20px;
-    padding: 30px;
+    padding: 30px 40px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* Form Groups */
-.form-group {
-    margin-bottom: 20px;
+td {
+    margin: 8px 0;
+    padding: 0;
+    float: left;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
+h1 {
+    font-family: "Courier New", monospace;
+}
+
+h2,
+h3,
+p {
+    font-family: "Courier New", monospace;
+}
+
+label {
+    font-family: "Courier New", monospace;
     font-size: 16px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="password"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group input[type="date"],
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 8px;
+input {
     font-family: "Courier New", monospace;
     font-size: 16px;
     border-radius: 4px;
     border: 1px solid grey;
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-
-/* Form Rows for Side-by-Side Fields */
-.form-row {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.form-row .form-group {
-    flex: 1;
-    min-width: 150px;
-}
-
-.form-group-small {
-    flex: 0 0 auto;
-    min-width: 100px;
-}
-
-/* Required Field Indicator */
-.required::after {
-    content: " *";
-    color: rgba(255, 0, 0, 0.5);
-}
-
-/* Error Messages */
-.error,
-.pwderror {
-    color: red;
-    font-family: Sans-Serif;
-    font-size: 12px;
-    margin-top: 5px;
-    min-height: 18px;
-}
-
-.pwderror div {
-    margin: 2px 0;
-}
-
-/* Checkbox and Radio Groups */
-.checkbox-group,
-.radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.checkbox-group label,
-.radio-group label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: normal;
-    cursor: pointer;
-}
-
-.checkbox-group input[type="checkbox"],
-.radio-group input[type="radio"] {
-    width: auto;
-    margin: 0;
-    cursor: pointer;
-}
-
-/* Slider */
-.slider-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-    flex-wrap: wrap;
-}
-
-.slider-container span {
-    font-size: 14px;
-    white-space: nowrap;
-}
-
-input[type="range"] {
-    flex: 1;
-    min-width: 200px;
-    height: 8px;
-}
-
-.sliderValue {
-    text-align: center;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-/* reCAPTCHA */
-.recaptcha-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-/* Buttons */
-.form-buttons {
-    text-align: center;
-    margin: 30px 0 20px;
-}
-
-.form-buttons input[type="submit"],
-.form-buttons input[type="reset"] {
-    width: auto;
-    min-width: 120px;
-    padding: 10px 20px;
-    margin: 0 10px;
+select {
     font-family: "Courier New", monospace;
     font-size: 16px;
     border-radius: 4px;
     border: 1px solid grey;
-    cursor: pointer;
-    background-color: white;
-    transition: background-color 0.3s;
 }
 
-.form-buttons input[type="submit"]:enabled:hover,
-.form-buttons input[type="reset"]:hover {
-    background-color: #d3d3d3;
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select {
+    width:20em;
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+    box-sizing:content-box;
 }
 
-.form-buttons input[type="submit"]:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-/* Form Note */
-.form-note {
-    text-align: right;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-/* Greeting */
-#greeting {
-    font-size: 12px;
-    text-align: center;
-    margin: 20px auto;
-}
-
-/* Links */
-a:link,
-a:visited {
-    text-decoration: none;
-    transition: color 0.5s ease-in-out;
-    color: blue;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: purple;
-}
-
-a:active {
-    text-decoration: underline;
-    color: blue;
-}
-
-/* Footer */
-iframe {
-    border: none;
-    width: 100%;
-    height: 300px;
+textarea {
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid grey;
+    max-width: 560px;
 }
 
 footer {
     font-family: "Courier New", monospace;
     font-size: 16px;
     width: 100%;
+    position: fixed;
     text-align: center;
     margin: 0 auto;
 }
 
-/* Responsive Design */
-@media only screen and (max-width: 768px) {
-    .content {
-        margin-top: 200px;
-        padding: 15px;
-    }
-
-    .header {
-        padding: 20px 15px;
-    }
-
-    .headerClass1 {
-        font-size: x-large;
-    }
-
-    .coolinks {
-        font-size: 14px;
-    }
-
-    .coolinks a {
-        display: block;
-        margin: 5px 0;
-    }
-
-    .form-container {
-        padding: 20px;
-        margin: 20px auto;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
-
-    .form-row .form-group {
-        min-width: 100%;
-    }
-
-    .form-group-small {
-        min-width: 100%;
-    }
-
-    .slider-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .slider-container span {
-        text-align: center;
-    }
-
-    input[type="range"] {
-        width: 100%;
-    }
-
-    .form-buttons input[type="submit"],
-    .form-buttons input[type="reset"] {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    .form-note {
-        text-align: center;
-    }
+.topPart {
+    text-align: center;
+    margin: 0 auto;
 }
 
-@media only screen and (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-
-    .content {
-        margin-top: 250px;
-        padding: 10px;
-    }
-
-    .headerClass1 {
-        font-size: large;
-    }
-
-    .form-container {
-        padding: 15px;
-        border-radius: 15px;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="password"],
-    .form-group input[type="email"],
-    .form-group input[type="tel"],
-    .form-group input[type="date"],
-    .form-group select,
-    .form-group textarea {
-        font-size: 14px;
-        padding: 6px;
-    }
+.endOfForm {
+    float: none;
+    text-align: center;
 }
 
-/* Legacy support for reCAPTCHA responsive */
-@media only screen and (max-width: 40em) {
-    .jt-feedback.u-responsive-lightbox.ui-draggable {
-        margin-top: 30px !important;
-        top: 0px !important;
-        position: fixed !important;
+/*SPECIFIC INPUTS*/
+
+#firstName,
+#lastName {
+    width: 15em;
+}
+
+#middleInitial {
+    width: 2em;
+}
+
+#addressLine1,
+#addressLine2,
+#phone,
+#email,
+#EIN,
+#userID,
+#password,
+#passwordCheck {
+    width: 35em;
+}
+
+#city {
+    width: 15em;
+}
+
+#state {
+    width: 10em;
+}
+
+#zip {
+    width: 7em;
+}
+
+
+/*BUTTONS*/
+button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    padding: 4px;
+    margin-bottom: 64px;
+}
+button:hover,
+#getdata:hover,
+#submit:enabled:hover,
+#clear:hover,
+#validate:hover {
+    background-color: #d3d3d3;
+}
+#submit:disabled:hover {
+    background-color: none;
+}
+
+/*IMPORTANT: for table rows with multiple input fields*/
+.multiLine {
+    display: flex;
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+/*ERRORS*/
+.error,
+.pwderror {
+    color: red;
+    font-family: Sans-Serif;
+    font-size: 12px;
+}
+
+/*LOGO*/
+#logo {
+    display: block;
+    margin: 0 auto;
+    width: 256px;
+}
+#logo:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s;
+}
+
+/*SLIDER CSS*/
+.sliderValue {
+    float: none;
+    text-align: center;
+    align-items: center;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+}
+
+/*REQUIRED FIELD CSS*/
+.required:after {
+    content: " *";
+    color: rgba(255, 0, 0, 0.5);
+}
+.context {
+    float: none;
+    text-align: right;
+    padding-top: 24px;
+}
+
+/*IFRAMES*/
+iframe {
+    border: none;
+    width: 100%;
+}
+
+/*GREETING*/
+#greeting {
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/*STICKY HEADER*/
+.header {
+    margin: 0;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #555;
+    color: #f1f1f1;
+    width: 100%;
+    text-align: center;
+    z-index:9; 
+    opacity: 0.9;
+    width: 100%;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    margin: 0;
+}
+.sticky + .content {
+    padding-top: 100px;
+}
+
+/*NAVBAR*/
+.coolinks {
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    color:aliceblue;
+    text-align: center;
+    opacity: 1;
+}
+.headerClass1 {
+    display: inline;
+    font-size: xx-large;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    color: white;
+    opacity: 1;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.headerUserData {
+    font-family: "Courier New", monospace;
+    font-size: 24px;
+    text-align: center;
+}
+
+/*NEW TAB*/
+.body2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*OUTPUT CSS*/
+.output {
+    width: fit-content;
+    background-color: #d3d3d3;
+}
+.output th{
+    float: none;
+    text-align: center;
+    font-size: xx-large;
+}
+.outputData{
+    min-width: 200px;
+    max-width: 300px;
+    width:fit-content;
+    background-color: aliceblue;
+    text-align:left;
+    float:none;
+    padding:10px;
+    border-spacing:2px;
+    border-radius:5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+.outputName{
+    min-width: 100px;
+    max-width: 300px;
+    width:fit-content;
+    text-align:left;
+    float:none;
+}
+
+/*RECAPTCHA*/
+.recaptcha {
+    width: 304px;
+    margin: 0 auto;
+}
+.recaptchaContainer {
+    width: 100%;
+}
+
+/*LINKS*/
+a:link{
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+    color:blue;
+}
+a:visited{
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+    color:blue;
+}
+a:hover{
+    text-decoration: underline;
+    transition: color 0.5s ease-in-out;
+    color: purple;
+}
+a:active{
+    text-decoration: underline;
+    transition: color 0.5s ease-in-out;
+    color:blue;
+}
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 40em){
+
+    .jt-feedback.u-responsive-lightbox.ui-draggable{
+
+        margin-top:30px !important;
+
+        top:0px !important;
+
+        position:fixed !important;
+
     }
+
 }

@@ -3,7 +3,6 @@
 
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script defer src="script.js"></script>
@@ -16,9 +15,9 @@
         <div class="header" id="myHeader">
             <h2 class="headerClass1">Gray Matter Technologies</h2>
             <div class="coolinks">
-                <a href="https://www.seanncho.com/">Home</a>
+                <a href="https://www.freecodecamp.org/">Home</a>
                 <a href="https://www.torproject.org/">Directory</a>
-                <a href="https://www.freecodecamp.org/">Resources</a>
+                <a href="https://www.wikipedia.org/">Resources</a>
                 <a href="https://www.php.net/">Careers</a>
                 <a href="https://templeos.org/">Products</a>
             </div>
@@ -34,142 +33,331 @@
             <p>Fill out the following application</p> 
         </div>
         <p id="greeting"></p>
-        <form name="signup" id="signup" action="thankyou.html">
-            <div class="form-container">
-                <!-- Name Fields -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="required" for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="First Name" minlength="1" maxlength="30" placeholder="Walter" pattern="^[a-zA-Z](?:[ '\-a-zA-Z]?[a-zA-Z])*$" title="Letters, apostrophes, and dashes only" required>
-                        <div class="error" id="firstNameError"></div>
-                    </div>
-                    <div class="form-group form-group-small">
-                        <label for="middleInitial">MI:</label>
-                        <input type="text" id="middleInitial" name="Middle Initial" maxlength="1" placeholder="H" pattern="[A-Z]" title="One capital letter only">
-                        <div class="error" id="middleInitialError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="required" for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="Last Name" minlength="1" maxlength="30" placeholder="White" pattern="^[a-zA-Z](?:[ '\-a-zA-Z2-5]?[a-zA-Z2-5])*$" title="Letters, apostrophes, numbers 2-5, and dashes only" required>
-                        <div class="error" id="lastNameError"></div>
-                    </div>
-                </div>
+        <form name="signup" id="signup" onreset="removeData()" action="thankyou.html">
+        <table> 
 
-                <!-- Address Fields -->
-                <div class="form-group">
+            <!--FIRST NAME, MIDDLE INITIAL, LAST NAME-->
+            <tr class="multiLine"> 
+                <!--FIRST NAME-->
+                <td> <!--REFERENCE: https://stackoverflow.com/users/1020526/revo.-->
+                    <label class="required" for="firstName">First Name:</label>
+                    <br>
+                    <input 
+                    type="text" 
+                    id="firstName" 
+                    name="First Name" 
+                    minlength="1" 
+                    maxlength="30" 
+                    placeholder="Walter" 
+                    pattern="^[a-zA-Z](?:[ '\-a-zA-Z]?[a-zA-Z])*$" 
+                    title="Letters, apostrophes, and dashes only"
+                    onkeyup="firstNameValidation()" 
+                    oninvalid="this.setCustomValidity('Letters, apostrophes, and dashes only')"
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
+                    <div class="error" id="firstNameError"></div>
+                </td>
+                <!--MIDDLE INITIAL-->
+                <td>
+                    <label for="middleInitial">MI:</label>
+                    <br>
+                    <input 
+                    type="text" 
+                    id="middleInitial" 
+                    name="Middle Initial" 
+                    maxlength="1" 
+                    placeholder="H"
+                    pattern="[A-Z]" 
+                    title="One capital letter only"
+                    onkeyup="middleInitialValidation()" 
+                    oninvalid="this.setCustomValidity('One capital letter only')" 
+                    oninput="this.setCustomValidity('')">
+                    <br>
+                    <div class="error" id="middleInitialError"></div>
+                </td>
+                <!--LAST NAME-->
+                <td>
+                    <label class="required" for="lastName">Last Name:</label>
+                    <br>
+                    <input 
+                    type="text" 
+                    id="lastName" 
+                    name="Last Name" 
+                    minlength="1" 
+                    maxlength="30" 
+                    placeholder="White"
+                    pattern="^[a-zA-Z](?:[ '\-a-zA-Z2-5]?[a-zA-Z2-5])*$" 
+                    title="Letters, apostrophes, numbers 2-5, and dashes only"
+                    onkeyup="lastNameValidation()" 
+                    oninvalid="this.setCustomValidity('Letters, apostrophes, numbers 2-5, and dashes only')" 
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
+                    <div class="error" id="lastNameError"></div>
+                </td>
+            </tr>
+
+            <!--ADDRESS LINE 1-->
+            <tr> 
+                <td colspan="3">
                     <label class="required" for="addressLine1">Address Line 1:</label>
-                    <input type="text" id="addressLine1" name="Address Line 1" minlength="2" maxlength="30" placeholder="308 Negra Arroyo Lane" title="At least 1 address line required" required>
+                    <br>
+                    <input 
+                    type="text" 
+                    id="addressLine1"
+                    name="Address Line 1" 
+                    minlength="2" 
+                    maxlength="30" 
+                    placeholder="308 Negra Arroyo Lane" 
+                    title="At least 1 address line required"
+                    onkeyup = "addressOneValidation()"
+                    oninvalid="this.setCustomValidity('At least 1 address line required')"
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
                     <div class="error" id="addressLine1Error"></div>
-                </div>
+                </td>
+            </tr>
 
-                <div class="form-group">
+            <!--ADDRESS LINE 2-->
+            <tr> 
+                <td colspan="3">
                     <label for="addressLine2">Address Line 2:</label>
-                    <input type="text" id="addressLine2" name="Address Line 2" minlength="2" maxlength="30" placeholder="308 Negra Arroyo Lane" title="Enter address line 2 correctly">
+                    <br>
+                    <input 
+                    type="text" 
+                    id="addressLine2"
+                    name="Address Line 2" 
+                    minlength="2" 
+                    maxlength="30" 
+                    placeholder="308 Negra Arroyo Lane"
+                    title="Enter address line 2 correctly"
+                    onkeyup="addressTwoValidation()"
+                    oninvalid="this.setCustomValidity('Enter address line 2 correctly')" 
+                    oninput="this.setCustomValidity('')">
+                    <br>
                     <div class="error" id="addressLine2Error"></div>
-                </div>
+                </td>
+            </tr>
 
-                <!-- City, State, Zip -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="required" for="city">City:</label>
-                        <input type="text" id="city" name="City" minlength="2" maxlength="30" placeholder="Albuquerque" title="City is required" required>
-                        <div class="error" id="cityError"></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="required" for="state">State:</label>
-                        <select id="state" name="State" title="State is required" required>
-                            <option value="" disabled selected>Choose State</option>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="PR">Puerto Rico</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                        </select>
-                        <div class="error" id="stateError"></div>
-                    </div>
-                    <div class="form-group form-group-small">
-                        <label class="required" for="zip">Zip Code:</label>
-                        <input type="text" id="zip" name="ZIP code" minlength="5" maxlength="10" placeholder="87111" pattern="^[0-9]{5}(?:-[0-9]{4})?$" title="5 Digit Zip/Postal Code is required" required>
-                        <div class="error" id="zipError"></div>
-                    </div>
-                </div>
+            <!--CITY, STATE, ZIP-->
+            <tr class="multiLine">
+                <!--CITY-->
+                <td>
+                    <label class="required" for="city">City:</label>
+                    <br>
+                    <input 
+                    type="text" 
+                    id="city"
+                    name="City" 
+                    minlength="2" 
+                    maxlength="30" 
+                    placeholder="Albuquerque" 
+                    title="City is required"
+                    onkeyup="cityValidation()"
+                    oninvalid="this.setCustomValidity('City is required')" 
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
+                    <div class="error" id="cityError"></div>
+                </td>
+                <!--STATE-->
+                <td><!--Snippet: https://www.freeformatter.com/usa-state-list-html-select.html-->
+                    <label class="required" for="state">State:</label>
+                    <br>
+                    <select 
+                    id="state" 
+                    name="State" 
+                    onchange="stateValidation()" 
+                    oninvalid="this.setCustomValidity('State is required')" 
+                    oninput="this.setCustomValidity('')" 
+                    title="State is required" 
+                    required>
+                        <option value="" disabled selected>Choose State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                    <br>
+                    <div class="error" id="stateError"></div>
+                </td>
+                <!--ZIP-->
+                <td>
+                    <label class="required" for="zip">Zip Code:</label>
+                    <br>
+                    <input 
+                    type="text" 
+                    id="zip"
+                    name="ZIP code" 
+                    minlength="5" 
+                    maxlength="10" 
+                    placeholder="87111" 
+                    pattern="^[0-9]{5}(?:-[0-9]{4})?$" 
+                    title="5 Digit Zip/Postal Code is required"
+                    onkeyup="zipValidation()"
+                    oninvalid="this.setCustomValidity('5 Digit Zip/Postal Code is required')"
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
+                    <div class="error" id="zipError"></div>
+                </td>
+            </tr>
 
-                <!-- Contact Fields -->
-                <div class="form-group">
+            <!--PHONE NUMBER-->
+            <tr> 
+                <td colspan="3">
                     <label class="required" for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="Phone Number" maxlength="12" placeholder="505-555-1234" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter a valid phone number" required>
+                    <br>
+                    <input 
+                    type="tel" 
+                    id="phone"
+                    name="Phone Number" 
+                    maxlength="12" 
+                    placeholder="505-555-1234"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                    title="Enter a valid phone number"
+                    onkeyup="phoneValidation()" 
+                    oninvalid="this.setCustomValidity('Enter a valid phone number')" 
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
                     <div class="error" id="phoneError"></div>
-                </div>
+                </td>
+            </tr>
 
-                <div class="form-group">
+            <!--EMAIL-->
+            <tr>
+                <td colspan="3">
                     <label class="required" for="email">Email:</label>
-                    <input type="email" id="email" name="Email Address" maxlength="30" placeholder="name@domain.com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Enter a valid email address" required>
+                    <br>
+                    <input 
+                    type="email" 
+                    id="email"
+                    name="Email Address" 
+                    maxlength="30" 
+                    placeholder="name@domain.com" 
+                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                    title="Enter a valid email address"
+                    onkeyup="emailValidation()"
+                    oninvalid="this.setCustomValidity('Enter a valid email address')"
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
                     <div class="error" id="emailError"></div>
-                </div>
+                </td>
+            </tr>
 
-                <!-- Account Fields -->
-                <div class="form-group">
+            <!--EIN-->
+            <tr> 
+                <td colspan="3">
                     <label class="required" for="EIN">Employer Identification Number (EIN):</label>
-                    <input type="password" name="EIN" id="EIN" maxlength="10" placeholder="12-3456789" pattern="[0-9]{2}-[0-9]{7}" title="Enter a valid EIN" required>
+                    <br>
+                    <input 
+                    type="password" 
+                    name="EIN" 
+                    id="EIN" 
+                    maxlength="10" 
+                    placeholder="12-3456789"
+                    pattern="[0-9]{2}-[0-9]{7}" 
+                    title="Enter a valid EIN"
+                    onkeyup="EINValidation()" 
+                    oninvalid="this.setCustomValidity('Enter a valid EIN')" 
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
                     <div class="error" id="EINError"></div>
-                </div>
+                </td>
+            </tr>
 
-                <div class="form-group">
+            <!--USER ID-->
+            <tr> 
+                <td colspan="3">
                     <label class="required" for="userID">User ID:</label>
-                    <input type="text" id="userID" name="User ID" maxlength="30" placeholder="mrWhite1234" pattern="[A-Za-z]+[A-Za-z0-9-_]{8,}" title="User ID must start with a letter and be at least 8 characters long" required>
+                    <br>
+                    <input 
+                    type="text" 
+                    id="userID" 
+                    name="User ID"                     maxlength="30" 
+                    placeholder="mrWhite1234" 
+                    pattern="[A-Za-z]+[A-Za-z0-9-_]{8,}" 
+                    title="User ID must start with a letter and be at least 8 characters long"
+                    onkeyup="userValidation()"
+                    oninvalid="this.setCustomValidity('User ID must start with a letter and be at least 8 characters long')"
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
                     <div class="error" id="userIDError"></div>
-                </div>
+                </td>
+            </tr>
 
-                <div class="form-group">
+            <!--PASSWORD-->
+            <tr> 
+                <td colspan="3">
                     <label class="required" for="password">Password:</label>
-                    <input type="password" id="password" name="Password" maxlength="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters" placeholder="password" required>
+                    <br>
+                    <input 
+                    type="password" 
+                    id="password" 
+                    name="Password" 
+                    maxlength="30" 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                    onkeyup="passwordValidation(); passwordCheckValidation();" 
+                    title="Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters" 
+                    placeholder="password" 
+                    oninvalid="this.setCustomValidity('Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters')" 
+                    oninput="this.setCustomValidity('')"
+                    required> 
+                    <br>
                     <div class="error" id="passwordError"></div>
                     <div class="pwderror">
                         <div id="msg1"></div>
@@ -179,72 +367,138 @@
                         <div id="msg5"></div>
                         <div id="msg6"></div>
                     </div>
-                </div>
+                </td>
+            </tr>
 
-                <div class="form-group">
+            <!--PASSWORD CHECK-->
+            <tr> 
+                <td colspan="3">
                     <label class="required" for="passwordCheck">Re-enter Password:</label>
-                    <input type="password" id="passwordCheck" name="Password Check" maxlength="30" placeholder="confirm password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <br>
+                    <input 
+                    type="password" 
+                    id="passwordCheck" 
+                    name="Password Check" 
+                    maxlength="30" 
+                    placeholder="confirm password" 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                    title="Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters" 
+                    onkeyup="passwordCheckValidation()" 
+                    oninvalid="this.setCustomValidity('Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters')"
+                    oninput="this.setCustomValidity('')"
+                    required>
+                    <br>
                     <div class="error" id="passwordCheckError"></div>
-                </div>
+                </td>
+            </tr>
 
-                <div class="form-group">
+            <!--DATE OF BIRTH-->
+            <tr>
+                <td colspan="3">
                     <label class="required" for="dateOfBirth">Date of Birth:</label>
-                    <input type="date" id="dateOfBirth" name="Date of Birth">
+                    <br>
+                    <input 
+                    type="date"
+                    id="dateOfBirth"  
+                    name="Date of Birth" 
+                    onblur="dateOfBirthValidation()">
+                    <br>
                     <div class="error" id="dateOfBirthError"></div>
-                </div>
+                </td>
+            </tr>
 
-                <!-- Textarea -->
-                <div class="form-group">
+            <!--TEXTAREA-->
+            <tr>
+                <td colspan="3">
                     <label for="textArea">Describe your skills and list your qualifications:</label>
-                    <textarea name="Skills and Qualification" id="textArea" maxlength="256" rows="3"></textarea>
-                </div>
+                    <br>
+                    <textarea cols="50" rows="3" name="Skills and Qualification" id="textArea" maxlength="256"></textarea>
+                </td>
+            </tr>
 
-                <!-- Checkboxes -->
-                <div class="form-group">
+            <!--CHECKBOXES-->
+            <tr>
+                <td colspan="3">
                     <ins>Check all of the following that apply:</ins>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="fivePlusyearsChemistryExperience" id="checkbox1" value="5 years of experience or more in chemistry"> 5 years of experience or more in chemistry</label>
-                        <label><input type="checkbox" name="noCriminalRecord" id="checkbox2" value="Has no criminal record"> Have no criminal record</label>
-                        <label><input type="checkbox" name="validDriversLicense" id="checkbox3" value="Has a valid driver's license"> Have a valid driver's license</label>
-                        <label><input type="checkbox" name="albuquerqueResident" id="checkbox4" value="Albuquerque, New Mexico Resident"> Live in Albuquerque, NM</label>
-                        <label><input type="checkbox" name="affiliationWithDEA" id="checkbox5" value="Has affiliation with the DEA"> Have an affiliation with the DEA</label>
-                    </div>
-                </div>
+                    <br>
+                    <input type="checkbox" name="fivePlusyearsChemistryExperience" id="checkbox1" value="5 years of experience or more in chemistry">
+                    <label for="checkbox1">5 years of experience or more in chemistry</label>
+                    <br>
+                    <input type="checkbox" name="noCriminalRecord" id="checkbox2" value="Has no criminal record">
+                    <label for="checkbox2">Have no criminal record</label>
+                    <br>
+                    <input type="checkbox" name="validDriversLicense" id="checkbox3" value="Has a valid driver's license">
+                    <label for="checkbox3">Have a valid driver's license</label>
+                    <br>
+                    <input type="checkbox" name="albuquerqueResident" id="checkbox4" value="Albuquerque, New Mexico Resident">
+                    <label for="checkbox4">Live in Albuquerque, NM</label>
+                    <br>
+                    <input type="checkbox" name="affiliationWithDEA" id="checkbox5" value="Has affiliation with the DEA">
+                    <label for="checkbox5">Have an affiliation with the DEA</label>
+                    <br>
+                </td>
+            </tr>
 
-                <!-- Radio Buttons -->
-                <div class="form-group">
+            <!--RADIO BUTTONS-->
+            <tr> 
+                <td colspan="3">
                     <ins>What is your highest level of education?</ins>
-                    <div class="radio-group">
-                        <label><input type="radio" name="Education Level" id="highschool" value="High School"> High School</label>
-                        <label><input type="radio" name="Education Level" id="bachelors" value="Bachelor's Degree"> Bachelor's Degree</label>
-                        <label><input type="radio" name="Education Level" id="mastersPlus" value="Master's Degree or Higher"> Master's Degree or higher</label>
-                    </div>
-                </div>
+                    <br>
+                    <input type="radio" name="Education Level" id="highschool" value="High School">
+                    <label for="highschool">High School</label>
+                    <br>
+                    <input type="radio" name="Education Level" id="bachelors" value="Bachelor's Degree">
+                    <label for="bachelors">Bachelor's Degree</label>
+                    <br>
+                    <input type="radio" name="Education Level" id="mastersPlus" value="Master's Degree or Higher">
+                    <label for="mastersPlus">Master's Degree or higher</label>
+                    <br>
+                </td>
+            </tr>
 
-                <!-- Slider -->
-                <div class="form-group">
+            <!--SLIDER-->
+            <tr class="sliderRow">
+                <td colspan="3">
                     <ins><label for="desiredSalarySlider">Desired Salary:</label></ins>
-                    <div class="slider-container">
-                        <input type="range" min="20000" max="200000" step="1000" class="slider" name="Desired Salary" id="desiredSalarySlider">
-                    </div>
+                    <br>
+                    $20,000
+                    <input 
+                    type="range" 
+                    min=20000 
+                    max=200000 
+                    step="1000"
+                    class="slider"
+                    name="Desired Salary" 
+                    id="desiredSalarySlider" 
+                    oninput="sliderValidation(this.value)">
+                    $200,000
+                    <br>
                     <div class="sliderValue" id="sliderValue"></div>
-                </div>
+                </td>
+            </tr>
 
-                <!-- reCAPTCHA -->
-                <div class="form-group recaptcha-container">
-                    <div class="g-recaptcha" data-sitekey="6LfQAJkqAAAAACviF7LWBJCK694u2sHYuSV54_M1"></div>
-                </div>
+            <!--RECAPTCHA-->
+            <tr>
+                <td colspan="3" class="recaptchaContainer">
+                    <div class="recaptcha">
+                        <div class="g-recaptcha" data-sitekey="6Le-AE0pAAAAAJk3xaaD6ZaRye4Flq5IUFaMwRwR" required></div><br>
+                    </div>
+                </td>
+            </tr>
 
-                <!-- Buttons -->
-                <div class="form-group form-buttons">
+            <!--BUTTONS-->
+            <tr> 
+                <td colspan="3" class="endOfForm">
                     <input type="submit" id="submit" value="SUBMIT" disabled>
                     <input type="reset" id="clear" value="CLEAR">
-                </div>
-
-                <div class="form-note">
-                    <em>* denotes required field</em>
-                </div>
-            </div>
+                </td>
+            </tr>
+            
+            <!--CONTEXT-->
+            <tr>
+                <td class="context" colspan="3"><em>* denotes required field</em></td>
+            </tr>
+        </table>
         </form>
 
         <!--FOOTER-->
