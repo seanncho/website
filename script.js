@@ -17,22 +17,56 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Fade in and out elements on scroll
-const elementsToFadeInUpOnScroll = document.querySelectorAll(".tag");
+// Staggered scroll reveal: tags pop in left-to-right when scrolled into view
+const STAGGER_MS = 120;
+const GRID_SELECTOR =
+  ".cert-grid, .skill-grid, .project-grid, .contact-grid, .book-grid";
 
-function handleScroll() {
-  const windowHeight = window.innerHeight;
-  elementsToFadeInUpOnScroll.forEach((element) => {
-    const rect = element.getBoundingClientRect();
-    const isVisible = rect.top < windowHeight * 0.8 && rect.bottom > 0;
-    
-    element.classList.toggle("fade-in-up", isVisible);
-    element.classList.toggle("fade-out", !isVisible);
+function getGridColumnCount(grid) {
+  const columns = getComputedStyle(grid).gridTemplateColumns
+    .split(" ")
+    .filter((col) => col.trim().length > 0);
+  return Math.max(columns.length, 1);
+}
+
+function setStaggerDelays() {
+  document.querySelectorAll(GRID_SELECTOR).forEach((grid) => {
+    const useColumnStagger = grid.matches(GRID_SELECTOR);
+    const columns = useColumnStagger ? getGridColumnCount(grid) : null;
+
+    grid.querySelectorAll(":scope > .tag").forEach((tag, index) => {
+      const delay = useColumnStagger
+        ? (index % columns) * STAGGER_MS
+        : index * STAGGER_MS;
+      tag.style.setProperty("--stagger-delay", `${delay}ms`);
+    });
   });
 }
 
-// Add scroll event listener
-window.addEventListener("scroll", handleScroll);
+function isVisible(element) {
+  const rect = element.getBoundingClientRect();
+  const viewHeight = window.innerHeight;
+  return rect.top < viewHeight * 0.8 && rect.bottom > viewHeight * 0.05;
+}
 
-// Initial check to fade in elements if they are already in the viewport without scrolling
-handleScroll();
+function updateReveal() {
+  document.querySelectorAll(".tag").forEach((tag) => {
+    const visible = isVisible(tag);
+     if (visible) {
+      tag.classList.remove("fade-out");
+      tag.classList.add("revealed");
+    } 
+    else if (tag.classList.contains("revealed")) {
+      tag.classList.remove("revealed");
+      tag.classList.add("fade-out");
+    }
+  });
+}
+
+setStaggerDelays();
+window.addEventListener("scroll", updateReveal, { passive: true });
+window.addEventListener("resize", () => {
+  setStaggerDelays();
+  updateReveal();
+});
+updateReveal();
