@@ -627,9 +627,9 @@ function displayData() {
         formoutput += "</table>";
         localStorage.setItem("formOutput", formoutput);
         var newTab = window.open();
-        newTab.document.write("<!DOCTYPE html><html><head><link rel='stylesheet' type='text/css' href='homework4.css'></head><body class='body2'>");
+        newTab.document.write("<!DOCTYPE html><html><head><link rel='stylesheet' type='text/css' href='style.css'></head><body class='body2'>");
         newTab.document.write(localStorage.getItem("formOutput"));
-        newTab.document.write("<button onclick='window.location.href=\"thankyou4.html\"' class='button'>Submit</button>");
+        newTab.document.write("<button onclick='window.location.href=\"thankyou.html\"' class='button'>Submit</button>");
         newTab.document.write("</body></html>");
     }
 }
