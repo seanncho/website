@@ -31,13 +31,11 @@ function getGridColumnCount(grid) {
 
 function setStaggerDelays() {
   document.querySelectorAll(GRID_SELECTOR).forEach((grid) => {
-    const useColumnStagger = grid.matches(GRID_SELECTOR);
-    const columns = useColumnStagger ? getGridColumnCount(grid) : null;
+    const columns = getGridColumnCount(grid);
 
     grid.querySelectorAll(":scope > .tag").forEach((tag, index) => {
-      const delay = useColumnStagger
-        ? (index % columns) * STAGGER_MS
-        : index * STAGGER_MS;
+      // Redundancy removed: simplified delay calculation since we know the grid is selected via GRID_SELECTOR
+      const delay = (index % columns) * STAGGER_MS; 
       tag.style.setProperty("--stagger-delay", `${delay}ms`);
     });
   });
