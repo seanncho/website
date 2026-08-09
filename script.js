@@ -34,7 +34,6 @@ function setStaggerDelays() {
     const columns = getGridColumnCount(grid);
 
     grid.querySelectorAll(":scope > .tag").forEach((tag, index) => {
-      // Redundancy removed: simplified delay calculation since we know the grid is selected via GRID_SELECTOR
       const delay = (index % columns) * STAGGER_MS; 
       tag.style.setProperty("--stagger-delay", `${delay}ms`);
     });
