@@ -627,9 +627,14 @@ function displayData() {
         formoutput += "</table>";
         localStorage.setItem("formOutput", formoutput);
         var newTab = window.open();
-        newTab.document.write("<!DOCTYPE html><html><head><link rel='stylesheet' type='text/css' href='style.css'></head><body class='body2'>");
-        newTab.document.write(localStorage.getItem("formOutput"));
-        newTab.document.write("<button onclick='window.location.href=\"thankyou.html\"' class='button'>Submit</button>");
-        newTab.document.write("</body></html>");
+        if (newTab) {
+            var outputHtml = localStorage.getItem("formOutput");
+            var buttonHtml = "<button onclick='window.location.href=\"thankyou.html\"' class='button'>Submit</button>";
+            var fullHtml = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><link rel='stylesheet' type='text/css' href='style.css'></head><body class='body2'>" + outputHtml + " " + buttonHtml + "</body></html>";
+            
+            newTab.document.open();
+            newTab.document.write(fullHtml);
+            newTab.document.close();
+        }
     }
 }
