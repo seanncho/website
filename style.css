@@ -333,10 +333,14 @@ section {
   font-size: 1em;
   padding: 1em;
   width: fit-content;
-  border-radius: 0.6em;
   margin: 0.25em;
-  background: transparent;
   letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn2 {
@@ -344,10 +348,14 @@ section {
   font-size: 1em;
   padding: 1em;
   width: 10em;
-  border-radius: 0.6em;
   margin: 0.25em;
-  background: transparent;
   letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-color-1 {
