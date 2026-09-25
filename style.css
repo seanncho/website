@@ -384,6 +384,7 @@ section {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 300ms ease-in-out;
 }
 
 .cert-grid-container:hover,
@@ -391,7 +392,6 @@ section {
 .project-grid-container:hover,
 .contact-grid-container:hover,
 .book-grid-container:hover {
-  transition: all 300ms ease-in-out;
   border-color: rgba(255, 255, 255, 0.2);
 }
 
