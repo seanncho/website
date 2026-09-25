@@ -378,12 +378,12 @@ section {
 .book-grid-container {
   display: flex;
   padding: 1.5em;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cert-grid-container:hover,
@@ -391,7 +391,7 @@ section {
 .project-grid-container:hover,
 .contact-grid-container:hover,
 .book-grid-container:hover {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .cert-grid,
