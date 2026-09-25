@@ -392,6 +392,7 @@ section {
 .project-grid-container:hover,
 .contact-grid-container:hover,
 .book-grid-container:hover {
+  transition: all 300ms ease-in-out;
   border-color: rgba(255, 255, 255, 0.2);
 }
 
