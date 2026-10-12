@@ -1,7 +1,16 @@
 /* GENERAL */
 
+/* gugi-regular - latin */
+@font-face {
+  font-family: 'Gugi';
+  font-display: swap; 
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/gugi-v21-latin-regular.woff2') format('woff2');
+}
+
 * {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Gugi', sans-serif;
   margin: 0;
   padding: 0;
 }
