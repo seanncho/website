@@ -37,6 +37,7 @@ html {
 
 :root {
   --accent-color: #5BC2E7; /* Zima Blue */
+  color-scheme: dark;
 }
 
 body {
