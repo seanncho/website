@@ -140,7 +140,7 @@
     font-size: 0.7em;
   }
   .tag.quote {
-  padding: 2em;
+    padding-top: 22px;
   }
   footer {
     margin: 2vh 0 5vh;
